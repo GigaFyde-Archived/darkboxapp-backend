@@ -1,0 +1,27 @@
+name: Docker
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Initialize QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Initialize Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: hxnna
+          password: ${{ secrets.DOCKER_HUB }}
+      - id: docker_build
+        name: Build And Publish Image
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: darkboxapp/backend:latest
+      - name: Print Image Digest
+        run: echo ${{ steps.docker_build.outputs.digest }}

@@ -1,0 +1,56 @@
+{
+  "name": "@darkboxapp/backend",
+  "version": "1.1.0",
+  "description": "The backend for the DarkBox web application written in TypeScript",
+  "main": "build/src/index.js",
+  "repository": "git@github.com:darkboxapp/backend.git",
+  "author": "xpyxel <xpyxel@gmail.com>",
+  "license": "MPL-2.0",
+  "engines": {
+    "node": ">=10.5.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/express": "^4.17.8",
+    "@types/flake-idgen": "^0.1.30",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/morgan": "^1.9.1",
+    "@types/multer": "^1.4.4",
+    "@types/nanoid": "^2.1.0",
+    "@types/node": "^14.11.2",
+    "@types/node-fetch": "^2.5.7",
+    "@types/passport": "^1.0.4",
+    "@types/passport-jwt": "^3.0.3",
+    "gts": "^3.0.1",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  },
+  "dependencies": {
+    "@sentry/node": "^5.27.1",
+    "@sentry/tracing": "^5.27.1",
+    "@types/pg": "^7.14.5",
+    "aws-sdk": "^2.777.0",
+    "bcrypt": "^5.0.0",
+    "express": "^4.17.1",
+    "flake-idgen": "^1.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nanoid": "^3.1.15",
+    "node-fetch": "^2.6.1",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "pg": "^8.4.1"
+  }
+}

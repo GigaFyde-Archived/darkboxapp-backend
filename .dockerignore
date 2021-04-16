@@ -1,0 +1,4 @@
+blobs/
+build/
+node_modules/
+.env
